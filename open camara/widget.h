@@ -1,0 +1,48 @@
+#ifndef WIDGET_H
+#define WIDGET_H
+
+#include <QWidget>
+#include <QLabel>
+#include <QMainWindow>
+#include <QDebug>
+#include <QTimer>
+#include <QImage>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/opencv.hpp>
+
+using namespace cv;
+using namespace std;
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class Widget; }
+QT_END_NAMESPACE
+
+class Widget : public QLabel
+{
+    Q_OBJECT
+
+public:
+    Widget(QWidget *parent = nullptr);
+    ~Widget();
+
+
+    bool eventFilter(QObject *watched,QEvent *event) override;
+
+    QImage Mat2QImage(Mat cvImg);
+    void on_pushButton_open_clicked();
+
+private slots:
+    void opencamara();
+    void readfarme();
+    void closecamara();
+private:
+    Ui::Widget *ui;
+    QTimer* timer;
+    QImage imag;
+    Mat cap,cap_gray,cat_tmp;
+    VideoCapture capture;
+};
+#endif // WIDGET_H

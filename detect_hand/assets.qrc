@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/577f8713a63740b19b76d64374ab9675.png</file>
+        <file>assets/pexels-pixabay-315938.jpg</file>
+        <file>assets/qtWidget.qss</file>
+    </qresource>
+</RCC>

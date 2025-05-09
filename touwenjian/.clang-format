@@ -1,0 +1,20 @@
+# .clang-format
+Language: Cpp
+BasedOnStyle: LLVM
+IndentWidth: 4          # 缩进宽度为4个空格
+UseTab: Never           # 不要使用Tab键进行缩进，而是用空格
+ColumnLimit: 100        # 每行代码的字符数限制在100以内（超出可能会换行）
+AccessModifierOffset: -2 # public/private/protected 访问修饰符向前缩进2个空格
+
+# 大括号换行风格 (Allman style - 大括号独占一行)
+BreakBeforeBraces: Allman
+
+# 在指针或引用的星号/地址符周围的空格样式
+# 例如: int* p;  而不是 int *p; 或 int * p; (根据你的喜好调整为 Left, Right, Middle)
+PointerAlignment: Left
+
+# 其他一些你可能喜欢的选项 (可以先不加，等熟悉了再慢慢调整):
+# AllowShortFunctionsOnASingleLine: None # 不允许短函数写在一行
+# AllowShortIfStatementsOnASingleLine: Never # 不允许短if语句写在一行
+# AlignConsecutiveAssignments: false     # 不对齐连续的赋值语句
+# AlignConsecutiveDeclarations: false    # 不对齐连续的声明语句
